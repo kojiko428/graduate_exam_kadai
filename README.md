@@ -50,4 +50,5 @@ Rails 5.2.5
 - carrierwave
 - mini_magick
 - devise
+- ransack
 ***
