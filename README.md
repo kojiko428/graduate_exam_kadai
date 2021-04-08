@@ -18,17 +18,13 @@ Rails 5.2.5
 
 ## 機能一覧
 - [ ] ログイン機能
+- [ ] ユーザー登録機能
 - [ ] 在庫作成・保存
 - [ ] 在庫商品の一覧
 - [ ] 商品詳細編集・削除
-- [ ] 商品詳細の検索
-- [ ] ページネーション
-- [ ] タグ機能の作成
-- [ ] マイページ機能
-- [ ] 管理者の設定
-- [ ] メール告知機能
+- [ ] 商品詳細の検索（Gem：ransack）
+- [ ] レシート登録機能
 - [ ] コメント機能
-- [ ] SNSログイン機能
 ***
 
 ## カタログ設計
@@ -37,14 +33,16 @@ Rails 5.2.5
 
 ## テーブル定義
 [テーブル設計](https://docs.google.com/spreadsheets/d/1YiQb06GsKV7LXHhsEelSJZXivyy_NW7aJVaSs4XvKSw/edit?usp=sharing)
+
+[ER図](https://docs.google.com/spreadsheets/d/1WQBMAZ2GiVb4az8sGL-fjQcdngOQQR1awoJWWRB2QTE/edit?usp=sharing)
 ***
 
 ## 画面遷移図
-[画面遷移図](https://cacoo.com/diagrams/qgUY4326rUUhT0ak/FFD22)
+[画面遷移図](https://cacoo.com/diagrams/VdMZYifCTVgHIfim/57AA8)
 ***
 
 ## 画面ワイヤーフレーム
-[画面ワイヤーフレーム](https://cacoo.com/diagrams/VdMZYifCTVgHIfim/57AA8)
+[画面ワイヤーフレーム](https://cacoo.com/diagrams/qgUY4326rUUhT0ak/FFD22)
 ***
 
 ## 使用予定Gem
@@ -52,4 +50,5 @@ Rails 5.2.5
 - mini_magick
 - devise
 - ransack
+- kaminari
 ***
