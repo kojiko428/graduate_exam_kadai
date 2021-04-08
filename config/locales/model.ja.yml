@@ -1,0 +1,21 @@
+ja:
+  activerecord:
+    models:
+      stock: 在庫詳細
+      user: ユーザー
+    attributes:
+      stock:
+        item_genre: ジャンル名
+        item_name: 商品名
+        content: 内容
+        price: 価格
+        image: 画像
+        number_of_stock: 在庫数
+      user:
+        title: タイトル
+        name: 名前
+        email: メールアドレス
+        current_password: 現在のパスワード
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        remember_me: ログインを記憶
