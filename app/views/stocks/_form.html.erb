@@ -34,8 +34,9 @@
 
   <div class="field">
     <%= form.label :画像 %>
+    <%= image_tag(@stock.image.url) if @stock.image && @stock.image.url %>
     <%= form.file_field :image %><br>
-    <%= form.submit %>
+    <%= form.hidden_field :image_cache %>
   </div>
 
   <div class="field">

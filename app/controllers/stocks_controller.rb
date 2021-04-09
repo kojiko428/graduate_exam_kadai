@@ -10,6 +10,7 @@ before_action :set_stock, only: [:show, :edit, :update, :destroy]
   end
   def create
   # @stock = current_user.stocks.build(stock_params)
+
   @stock = Stock.new(stock_params)
   # @blog.user_id = current_user.id
   if params[:back]
@@ -41,7 +42,7 @@ before_action :set_stock, only: [:show, :edit, :update, :destroy]
     @stock.destroy
     redirect_to stocks_path, notice:"ストックを削除しました！"
   end
-  
+
   def confirm
     # @stock = current_user.stocks.build(stock_params)
     @stock = Stock.new(stock_params)
@@ -51,7 +52,7 @@ before_action :set_stock, only: [:show, :edit, :update, :destroy]
 
   private
     def stock_params  #:image_cache
-     params.require(:stock).permit(:item_genre, :item_name, :content, :price , :image , :number_of_stock)
+     params.require(:stock).permit(:item_genre, :item_name, :content, :price, :image, :image_cache , :number_of_stock)
    end
    def set_stock
     @stock = Stock.find(params[:id])
