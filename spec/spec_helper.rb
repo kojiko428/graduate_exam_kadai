@@ -14,6 +14,19 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  # 「headless_chromeのno-sandboxオプション」を追加する
+   config.before(:each) do |example|
+     if example.metadata[:type] == :system
+       driven_by :selenium, using: :headless_chrome, screen_size: [1400, 1400]  do |options|
+         options.add_argument('no-sandbox')
+       end
+     end
+   end
+   # featuer/1にて実装
+   config.before(:all) do
+       FactoryBot.reload
+   end
+
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
