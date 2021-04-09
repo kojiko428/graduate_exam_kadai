@@ -1,0 +1,50 @@
+<%= form_with(model: @stock, local: true, url: choose_new_or_edit) do |form| %>
+  <% if stock.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= t("errors.template.header", model: Stock.model_name.human, count: stock.errors.count) %></h2>
+
+      <ul>
+      <% stock.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :ジャンル名 %>
+    <%= form.text_field :item_genre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :商品名 %>
+    <%= form.text_field :item_name %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :内容 %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :価格 %>
+    <%= form.number_field :price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :画像 %>
+    <%= image_tag(@stock.image.url) if @stock.image && @stock.image.url %>
+    <%= form.file_field :image %><br>
+    <%= form.hidden_field :image_cache %>
+  </div>
+
+  <div class="field">
+    <%= form.label :在庫数 %>
+    <%= form.number_field :number_of_stock %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
