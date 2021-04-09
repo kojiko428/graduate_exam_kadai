@@ -1,5 +1,7 @@
 class StocksController < ApplicationController
 before_action :set_stock, only: [:show, :edit, :update, :destroy]
+# device ログインユーザーのみがブログ投稿
+before_action :authenticate_user!
 
   def index
   @stocks = Stock.all
