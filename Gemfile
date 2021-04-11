@@ -81,5 +81,7 @@ gem 'carrierwave'
 gem 'mimemagic', '0.3.7'
 # アップロードした画像ファイルのサイズを変更
 gem 'mini_magick'
-
+# ログイン機能に必要なGem
 gem 'devise'
+# 日本語化設定
+gem 'devise-i18n'
