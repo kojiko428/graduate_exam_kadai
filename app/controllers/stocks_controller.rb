@@ -11,11 +11,11 @@ before_action :authenticate_user!
   @stock = Stock.new
   end
   def create
-  # @stock = current_user.stocks.build(stock_params)
+  @stock = current_user.stocks.build(stock_params)
 
-  @stock = Stock.new(stock_params)
+  # @stock = Stock.new(stock_params)
   #現在ログインしているuserのidを、stockのuser_idカラムに挿入する
-  @stock.user_id = current_user.id
+  # @stock.user_id = current_user.id
   if params[:back]
       render :new
     elsif @stock.save
@@ -47,10 +47,11 @@ before_action :authenticate_user!
   end
 
   def confirm
-    # @stock = current_user.stocks.build(stock_params)
-    @stock = Stock.new(stock_params)
+    @stock = current_user.stocks.build(stock_params)
+    
+    # @stock = Stock.new(stock_params)
     #現在ログインしているuserのidを、stockのuser_idカラムに挿入する
-    @stock.user_id = current_user.id
+    # @stock.user_id = current_user.id
     render :new if @stock.invalid?
   end
 

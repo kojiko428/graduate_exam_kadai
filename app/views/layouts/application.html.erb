@@ -14,7 +14,7 @@
 
   <body>
   <% if user_signed_in? %>
-  <%#= link_to "Profile", user_path(current_user.id) %>
+    <%#= link_to "Profile", user_path(current_user.id) %>
     <%= link_to "ストック投稿", stocks_path %>
     <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
   <% else %>
