@@ -1,5 +1,7 @@
 class StocksController < ApplicationController
 before_action :set_stock, only: [:show, :edit, :update, :destroy]
+# device ログインユーザーのみがブログ投稿
+before_action :authenticate_user!
 
   def index
   @stocks = Stock.all
@@ -9,10 +11,11 @@ before_action :set_stock, only: [:show, :edit, :update, :destroy]
   @stock = Stock.new
   end
   def create
-  # @stock = current_user.stocks.build(stock_params)
+  @stock = current_user.stocks.build(stock_params)
 
-  @stock = Stock.new(stock_params)
-  # @blog.user_id = current_user.id
+  # @stock = Stock.new(stock_params)
+  #現在ログインしているuserのidを、stockのuser_idカラムに挿入する
+  # @stock.user_id = current_user.id
   if params[:back]
       render :new
     elsif @stock.save
@@ -44,8 +47,10 @@ before_action :set_stock, only: [:show, :edit, :update, :destroy]
   end
 
   def confirm
-    # @stock = current_user.stocks.build(stock_params)
-    @stock = Stock.new(stock_params)
+    @stock = current_user.stocks.build(stock_params)
+    
+    # @stock = Stock.new(stock_params)
+    #現在ログインしているuserのidを、stockのuser_idカラムに挿入する
     # @stock.user_id = current_user.id
     render :new if @stock.invalid?
   end

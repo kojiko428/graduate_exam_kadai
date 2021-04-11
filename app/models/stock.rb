@@ -6,4 +6,6 @@ class Stock < ApplicationRecord
   validates :content, length: { in: 1..140 }
   # carrierwave用の設定
   mount_uploader :image, ImageUploader
+
+  belongs_to :user
 end
