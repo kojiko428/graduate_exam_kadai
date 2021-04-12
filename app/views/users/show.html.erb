@@ -1,3 +1,8 @@
-<h2>MyPage</h2>
-<%= @user.email %>
-<div>あなたの名前:<%= current_user.name %></div>
+<h2><%= @user.username %>のユーザーページ</h2>
+
+<div>メールアドレス:<%= @user.email %></div>
+<div>ユーザー名:<%= current_user.name %></div>
+
+<% if user_signed_in? && @user == current_user %>
+<%= link_to "プロフィール編集", edit_user_path(current_user) %>
+<% end%>
