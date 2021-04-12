@@ -9,6 +9,13 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :receipts do
+    collection do
+    # 確認画面
+      post :confirm
+    end
+  end
+
   if Rails.env.development?
   mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end

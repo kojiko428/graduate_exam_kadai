@@ -1,0 +1,30 @@
+<!-- diveceディフォルト  noticeの表示が2重に表示になるため-->
+<!-- <p id="notice"><%#= notice %></p> -->
+
+<p>
+  <strong>Shop name:</strong>
+  <%= @receipt.shop_name %>
+</p>
+
+<p>
+  <strong>Item detail:</strong>
+  <%= @receipt.item_detail %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @receipt.memo %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @receipt.price %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @receipt.image.url %>
+</p>
+
+<%= link_to 'Edit', edit_receipt_path(@receipt) %> |
+<%= link_to 'Back', receipts_path %>

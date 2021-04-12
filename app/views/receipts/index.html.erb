@@ -1,0 +1,33 @@
+<h2>Receipts</h2>
+
+<table>
+  <thead align="center">
+    <tr>
+      <th>shop name</th>
+      <th>Item detail</th>
+      <th>Memo</th>
+      <th>Price</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody align="center">
+    <% @receipts.each do |receipt| %>
+      <tr>
+        <td><%= receipt.shop_name %></td>
+        <td><%= receipt.item_detail %></td>
+        <td><%= receipt.memo %></td>
+        <td><%= receipt.price %></td>
+        <td><%= image_tag receipt.image.url %></td>
+        <td><%= link_to 'Show', receipt %></td>
+        <td><%= link_to 'Edit', edit_receipt_path(receipt), data: { confirm: '本当に編集していいですか？' } %></td>
+        <td><%= link_to 'Destroy', receipt, method: :delete,data: { confirm: '本当に削除していいですか？' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Receipt', new_receipt_path %>

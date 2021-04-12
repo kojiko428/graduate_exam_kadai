@@ -1,0 +1,22 @@
+<h3>以下の内容で、送信する。</h3>
+
+<!-- <p><%#= "#{@receipt.user.name}さんのブログ"%></p> -->
+
+<%= form_with(model: @receipt, local: true, url: receipts_path ) do |form| %>
+  <%= form.hidden_field :shop_name %>
+  <%= form.hidden_field :item_detail %>
+  <%= form.hidden_field :memo %>
+  <%= form.hidden_field :price %>
+  <%= form.hidden_field :image_cache %>
+
+  <p>店舗名:<%= @receipt.shop_name %></p>
+  <p>商品詳細:<%= @receipt.item_detail %></p>
+  <p>メモ:<%= @receipt.memo %></p>
+  <p>価格:<%= @receipt.price %></p>
+
+  <p>画像:<%= image_tag(@receipt.image.url) if @receipt.image && @receipt.image.url %> </p>
+        
+
+  <%= form.submit  "登録する" %>
+  <%= form.submit "戻る", name: 'back' %>
+<% end %>

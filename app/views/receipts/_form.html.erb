@@ -1,0 +1,44 @@
+<%= form_with(model: @receipt, local: true, url: receipts_choose_new_or_edit) do |form| %>
+  <% if receipt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= t("errors.template.header", model: Receipt.model_name.human, count: receipt.errors.count) %></h2>
+
+      <ul>
+      <% receipt.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :店舗名 %>
+    <%= form.text_field :shop_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :商品詳細 %>
+    <%= form.text_field :item_detail %>
+  </div>
+
+  <div class="field">
+    <%= form.label :価格 %>
+    <%= form.number_field :price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :画像 %>
+    <%= image_tag(@receipt.image.url) if @receipt.image && @receipt.image.url %>
+    <%= form.file_field :image %><br>
+    <%= form.hidden_field :image_cache %>
+  </div>
+
+  <div class="field">
+    <%= form.label :メモ %>
+    <%= form.text_area :memo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
