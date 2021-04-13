@@ -3,6 +3,7 @@
 <table>
   <thead align="center">
     <tr>
+      <th>user name</th>
       <th>shop name</th>
       <th>Item detail</th>
       <th>Memo</th>
@@ -15,6 +16,7 @@
   <tbody align="center">
     <% @receipts.each do |receipt| %>
       <tr>
+        <td><%= "#{receipt.user.username}さんのレシピ"%></td>
         <td><%= receipt.shop_name %></td>
         <td><%= receipt.item_detail %></td>
         <td><%= receipt.memo %></td>
