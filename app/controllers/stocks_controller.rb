@@ -4,7 +4,10 @@ before_action :set_stock, only: [:show, :edit, :update, :destroy]
 before_action :authenticate_user!
 
   def index
-  @stocks = Stock.all.order(number_of_stock: :asc)
+  @q = Stock.ransack(params[:q])
+  @stocks = @q.result(distinct: true)
+  # @stocks = Stock.all.order(number_of_stock: :asc)
+
   end
 
   def new

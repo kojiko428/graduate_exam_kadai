@@ -85,3 +85,5 @@ gem 'mini_magick'
 gem 'devise'
 # 日本語化設定
 gem 'devise-i18n'
+
+gem 'ransack'
