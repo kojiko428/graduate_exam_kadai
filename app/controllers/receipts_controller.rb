@@ -30,6 +30,8 @@ class ReceiptsController < ApplicationController
 
   def show
     # @receipt = Receipt.find(params[:id])
+    @comments = @receipt.comments
+    @comment = @receipt.comments.build
   end
 
   def edit
