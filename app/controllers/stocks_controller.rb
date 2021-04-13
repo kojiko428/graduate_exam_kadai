@@ -1,6 +1,6 @@
 class StocksController < ApplicationController
 before_action :set_stock, only: [:show, :edit, :update, :destroy]
-# device ログインユーザーのみがブログ投稿
+# device ログインユーザーのみがストック投稿
 before_action :authenticate_user!
 
   def index
@@ -48,7 +48,7 @@ before_action :authenticate_user!
 
   def confirm
     @stock = current_user.stocks.build(stock_params)
-    
+
     # @stock = Stock.new(stock_params)
     #現在ログインしているuserのidを、stockのuser_idカラムに挿入する
     # @stock.user_id = current_user.id
