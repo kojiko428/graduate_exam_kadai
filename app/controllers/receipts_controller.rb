@@ -4,7 +4,7 @@ class ReceiptsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @receipts = Receipt.all
+    @receipts = Receipt.all.order(created_at: :desc)
   end
 
   def new
