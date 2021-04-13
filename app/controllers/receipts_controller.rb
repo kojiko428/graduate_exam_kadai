@@ -12,9 +12,9 @@ class ReceiptsController < ApplicationController
   end
 
   def create
-    # @receipt = current_user.receipts.build(receipt_params)
+    @receipt = current_user.receipts.build(receipt_params)
 
-    @receipt = Receipt.new(receipt_params)
+    # @receipt = Receipt.new(receipt_params)
     #現在ログインしているuserのidを、receiptのuser_idカラムに挿入する
     # @receipt.user_id = current_user.id
     if params[:back]
@@ -51,9 +51,9 @@ class ReceiptsController < ApplicationController
   end
 
   def confirm
-    # @receipt = current_user.receipts.build(receipt_params)
+    @receipt = current_user.receipts.build(receipt_params)
 
-    @receipt = Receipt.new(receipt_params)
+    # @receipt = Receipt.new(receipt_params)
     #現在ログインしているuserのidを、receiptのuser_idカラムに挿入する
     # @receipt.user_id = current_user.id
     render :new if @receipt.invalid?
