@@ -87,3 +87,5 @@ gem 'devise'
 gem 'devise-i18n'
 
 gem 'ransack'
+# has_secure_password
+# gem 'bcrypt', '3.1.11'

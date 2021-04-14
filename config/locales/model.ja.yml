@@ -21,6 +21,7 @@ ja:
       user:
         title: タイトル
         name: 名前
+        username: ユーザーネーム
         email: メールアドレス
         current_password: 現在のパスワード
         password: パスワード
