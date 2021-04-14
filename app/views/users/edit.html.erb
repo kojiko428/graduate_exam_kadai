@@ -1,7 +1,10 @@
 <h1>マイページ編集</h1>
 
 <%= form_with model: @user do |form| %>
-  <div>ユーザー名<%= form.text_field :username %></div>
-  <div>パスワード<%= form.text_field :password %></div>
+
+  <div>マイページ画像：<%= form.file_field :image %></div>
+  <div>ユーザー名：<%= form.text_field :username %></div>
+  <div>パスワード：<%= form.text_field :password %></div>
+
   <div><%= form.submit "保存" %></div>
 <% end %>
