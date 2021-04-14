@@ -8,4 +8,6 @@ class Stock < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   belongs_to :user
+
+  enum item_genre: { '洗濯用品': 0, '掃除用品': 1, 'バス用品': 2, 'トイレ用品': 3, '家庭日用品': 4, 'その他': 5}
 end

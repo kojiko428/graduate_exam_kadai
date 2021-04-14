@@ -17,7 +17,7 @@
   <tbody align="center">
     <% @receipts.each do |receipt| %>
       <tr>
-        <td><%= "#{receipt.user.username}さんのレシピ"%></td>
+        <td><%= "#{receipt.user.username}さんのレシート"%></td>
         <td><%= receipt.shop_name %></td>
         <td><%= receipt.item_detail %></td>
         <td><%= receipt.memo %></td>
@@ -25,8 +25,13 @@
         <td><%= image_tag receipt.image.url %></td>
         <td><%= l receipt.created_at, format: :short %></td>
         <td><%= link_to 'Show', receipt %></td>
+
+
+    <!-- ログインユーザーのみ入力できる -->
+      <% if current_user.id == receipt.user.id %>
         <td><%= link_to 'Edit', edit_receipt_path(receipt), data: { confirm: '本当に編集していいですか？' } %></td>
         <td><%= link_to 'Destroy', receipt, method: :delete,data: { confirm: '本当に削除していいですか？' } %></td>
+      <% end %>
       </tr>
     <% end %>
   </tbody>

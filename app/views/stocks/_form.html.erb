@@ -13,7 +13,9 @@
 
   <div class="field">
     <%= form.label :ジャンル名 %>
-    <%= form.text_field :item_genre %>
+    <%#= form.text_field :item_genre %>
+    <%= form.select :item_genre, [["洗濯用品", "0"], ["掃除用品", "1"], ["バス用品", "2"],
+        ["トイレ用品", "3"],  ["家庭日用品", "4"], ["その他", "5"]], include_blank: "選択して下さい"  %>
   </div>
 
   <div class="field">
