@@ -25,17 +25,20 @@
 
   <tbody align="center">
     <% @stocks.each do |stock| %>
-      <tr>
-        <td><%= stock.item_genre %></td>
-        <td><%= stock.item_name %></td>
-        <td><%= stock.content %></td>
-        <td><%= stock.price %></td>
-        <td><%= image_tag stock.image.url %></td>
-        <td><%= stock.number_of_stock %></td>
-        <td><%= link_to 'Show', stock %></td>
-        <td><%= link_to 'Edit', edit_stock_path(stock), data: { confirm: '本当に編集していいですか？' } %></td>
-        <td><%= link_to 'Destroy', stock, method: :delete,data: { confirm: '本当に削除していいですか？' } %></td>
-      </tr>
+    <!--自分が作成したタスクだけを表示させる -->
+      <% if current_user.id == stock.user.id %>
+        <tr>
+          <td><%= stock.item_genre %></td>
+          <td><%= stock.item_name %></td>
+          <td><%= stock.content %></td>
+          <td><%= stock.price %></td>
+          <td><%= image_tag stock.image.url %></td>
+          <td><%= stock.number_of_stock %></td>
+          <td><%= link_to 'Show', stock %></td>
+          <td><%= link_to 'Edit', edit_stock_path(stock), data: { confirm: '本当に編集していいですか？' } %></td>
+          <td><%= link_to 'Destroy', stock, method: :delete,data: { confirm: '本当に削除していいですか？' } %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

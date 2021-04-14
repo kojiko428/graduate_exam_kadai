@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :users, :only => [:show, :edit, :update]
-  root 'stocks#index'
+  root 'receipts#index'
   resources :stocks do
     collection do
     # 確認画面
