@@ -4,7 +4,10 @@ class ReceiptsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @receipts = Receipt.all.order(created_at: :desc)
+    @q = Receipt.ransack(params[:q])
+    @receipts = @q.result.includes(:user).page(params[:page]) # 検索結果(検索しなければ全件取得)
+    # @receipts = @q.result(distinct: true)
+    # @receipts = Receipt.all.order(created_at: :desc)
   end
 
   def new
