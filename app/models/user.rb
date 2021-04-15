@@ -18,4 +18,5 @@ class User < ApplicationRecord
   has_many :receipts
 
   mount_uploader :image, ImageUploader
+
 end
