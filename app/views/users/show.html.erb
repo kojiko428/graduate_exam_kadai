@@ -1,4 +1,11 @@
-<h2><%= @user.username %>のユーザーページ</h2>
+<h3><%= @user.username %>のユーザーページ</h3>
+
+<% if @user.image? %>
+  <img src='<%= @user.image %>' class="icon_image" alt="ユーザーアイコン">
+<% else %>
+  <image src="/assets/default.png" class="icon_image" alt="ユーザーアイコン" %>
+<% end %>
+
 
 <div>メールアドレス:<%= @user.email %></div>
 <div>ユーザー名:<%= @user.username %></div>
@@ -6,8 +13,7 @@
 
 <% if user_signed_in? && @user == current_user %>
 
-
 <%= link_to "ストック一覧に進む", stocks_path %><br>
 <%= link_to "レシート一覧に進む", receipts_path %><br>
 <%= link_to "マイページ編集", edit_user_path(current_user) %>
-<% end%>
+<% end %>

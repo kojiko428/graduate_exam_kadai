@@ -4,7 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable , :validatable
 
-
   # 登録パスワードのバリデーション
   # VALID_PASSWORD_REGIX = /\A[a-z0-9]+\z/i
 
@@ -17,4 +16,7 @@ class User < ApplicationRecord
 
   has_many :stocks
   has_many :receipts
+
+  mount_uploader :image, ImageUploader
+
 end

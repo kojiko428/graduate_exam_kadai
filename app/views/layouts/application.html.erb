@@ -4,6 +4,8 @@
     <title>IEty</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <!-- 文字化けを防ぐために指定 -->
+    <meta charset="UTF-8">
     <!-- スマホサイズの媒体にも適用 -->
     <meta name="viewport" content="width=device-width">
 
@@ -13,25 +15,35 @@
   </head>
 
   <body>
-  <% if user_signed_in? %>
-    <%= link_to "マイページ", user_path(current_user.id) %>
-    <%= link_to "ストック投稿", stocks_path %>
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to "新規登録", new_user_registration_path %>
-    <%= link_to "ログイン", new_user_session_path %>
-  <% end %>
+    <div id="wrapper">
+      <header class="header">
+        <ul>
+          <li><a>IEty</a></li>
+          <li><a href="http://localhost:3000/">トップページ</a></li>
+        </ul>
+      </header>
 
-  <% if notice %>
-    <p class="alert alert-notice"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-    <p class="alert alert-error"><%= alert %></p>
-  <% end %>
-    <%= yield %>
-    <footer>
-        <p></p>
-        <p></p>
-    </footer>
+      <div class="layout_display">
+        <% if user_signed_in? %>
+          <%= link_to "マイページ", user_path(current_user.id) %>
+          <%= link_to "ストック投稿", stocks_path %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "新規登録", new_user_registration_path %>
+          <%= link_to "ログイン", new_user_session_path %>
+        <% end %>
+
+        <% if notice %>
+         <p class="alert alert-notice"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+         <p class="alert alert-error"><%= alert %></p>
+        <% end %>
+        <%= yield %>
+      </div>
+
+      <footer class="footer">
+      </footer>
+    </div>
   </body>
 </html>

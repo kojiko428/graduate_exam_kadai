@@ -8,7 +8,7 @@ class Receipt < ApplicationRecord
   validates :item_detail, length: { in: 1..30 }
 
   # carrierwave用の設定
-  mount_uploader :image, ImageUploader
+  mount_uploader :image, ImageReceiptUploader
 
   belongs_to :user
   has_many :comments, dependent: :destroy
