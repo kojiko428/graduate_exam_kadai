@@ -49,4 +49,7 @@ class ImageReceiptUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  include CarrierWave::MiniMagick
+  # 画像の縦横比を維持したまま、 width を最大 150px、height を最大 100pxにリサイズ
+  process resize_to_fit: [150, 100]
 end
