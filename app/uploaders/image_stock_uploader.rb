@@ -36,6 +36,7 @@ class ImageStockUploader < CarrierWave::Uploader::Base
   # Create different versions of your uploaded files:
   # version :thumb do
   #   process resize_to_fit: [50, 50]
+
   # end
 
   # Add an allowlist of extensions which are allowed to be uploaded.
@@ -50,4 +51,7 @@ class ImageStockUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
+  include CarrierWave::MiniMagick
+  # 画像の縦横比を維持したまま、 width を最大 150px、height を最大 100pxにリサイズ
+  process resize_to_fit: [300, 200]
 end

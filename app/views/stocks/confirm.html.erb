@@ -1,6 +1,7 @@
 <h3>以下の内容で、送信する。</h3>
 
-<p><%= "#{@stock.user.username}さんのストック"%></p> 
+<div class="main-container_stock">
+<p><%= "#{@stock.user.username}さんのストック"%></p>
 
 <%= form_with(model: @stock, local: true, url: stocks_path ) do |form| %>
   <%= form.hidden_field :item_genre %>
@@ -17,7 +18,9 @@
 
   <p>画像:<%= image_tag(@stock.image.url) if @stock.image && @stock.image.url %> </p>
           <%= form.hidden_field :image_cache %>
+
   <p>在庫数:<%= @stock.number_of_stock %></p>
+</div>
 
   <%= form.submit  "登録する" %>
   <%= form.submit "戻る", name: 'back' %>

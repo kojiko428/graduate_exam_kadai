@@ -1,5 +1,6 @@
 <h3><%= @user.username %>のユーザーページ</h3>
 
+<div class="main-container_user">
 <% if @user.image? %>
   <img src='<%= @user.image %>' class="icon_image" alt="ユーザーアイコン">
 <% else %>
@@ -17,3 +18,5 @@
 <%= link_to "レシート一覧に進む", receipts_path %><br>
 <%= link_to "マイページ編集", edit_user_path(current_user) %>
 <% end %>
+
+</div>

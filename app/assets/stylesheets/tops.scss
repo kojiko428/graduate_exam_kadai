@@ -1,0 +1,75 @@
+// Place all the styles related to the tops controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// ロゴ表示
+.img-wrap {
+  overflow: hidden;
+  position: relative;
+  // 追加
+  margin-top: 20px;
+}
+
+.img-wrap:before {
+  animation: img-wrap 2s cubic-bezier(.4, 0, .2, 1) forwards;
+  background: #fff;
+  bottom: 0;
+  content: '';
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+@keyframes img-wrap {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+
+//
+// .top-content {
+// text-align: center;
+//   }
+
+.responsive-message {
+      // width:;
+      // display: none;
+}
+  //
+  //   .top-content img {
+  //     width: 100%;
+  //   }
+  // }
+  //
+
+// 文字CSS
+h4 {
+  margin: 1.5em;
+
+  color: #6cb4e4;
+  text-align: center;
+  padding: 0.25em;
+  border-top: solid 2px #6cb4e4;
+  border-bottom: solid 2px #6cb4e4;
+  background: -webkit-repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+  background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+}
+
+.layout_display{
+  margin-right: 15px;
+  margin-top: 40px;
+}
+  //
+  // .signup-button {
+  //   margin-right: 15px;
+  //   margin-top: 40px;
+  // }
+  // .login-button {
+  //   margin-top: 40px;
+  // }
+// }

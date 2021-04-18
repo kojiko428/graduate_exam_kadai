@@ -1,3 +1,40 @@
 // Place all the styles related to the stocks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+table tr{
+  border-bottom: solid 1px #eee;
+  cursor: pointer;
+}
+
+table tr:hover{
+  background-color: #d4f0fd;
+}
+
+table th,table td{
+  text-align: center;
+  width: 25%;
+  padding: 10px 0;
+}
+
+// 写真サイズ
+// .stock_image{
+//   width: 15px; height: 10px;
+//   object-fit: contain;
+// }
+
+// 選択ボタンの中央寄せ
+.field_stock_image{
+display: inline-block
+}
+
+.main-container_stock {
+  background-image: url("wallpaper_stock.png")
+}

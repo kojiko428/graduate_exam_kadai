@@ -12,6 +12,7 @@
 
 <%= link_to "一覧に戻る", stocks_path %>
 
+<div class:"table_stock" style="width:100%; height:1800px; overflow:auto;">
 <table>
   <thead align="center">
     <tr>
@@ -25,6 +26,7 @@
     </tr>
   </thead>
 
+
   <tbody align="center">
     <% @stocks.each do |stock| %>
     <!--自分が作成したタスクだけを表示させる -->
@@ -34,7 +36,9 @@
           <td><%= stock.item_name %></td>
           <td><%= stock.content %></td>
           <td><%= stock.price %></td>
+
           <td><%= image_tag stock.image.url %></td>
+
           <td><%= stock.number_of_stock %></td>
           <td><%= link_to 'Show', stock %></td>
           <td><%= link_to 'Edit', edit_stock_path(stock), data: { confirm: '本当に編集していいですか？' } %></td>
@@ -45,9 +49,11 @@
   </tbody>
 </table>
 
+
 <br>
 
 
 <%= link_to 'New Stock', new_stock_path %><br>
 
 <%= paginate @stocks  %>
+</div>

@@ -1,44 +1,49 @@
 <!-- diveceディフォルト  noticeの表示が2重に表示になるため-->
 <!-- <p id="notice"><%#= notice %></p> -->
 
-<div class="container">
-  <p id="notice"><%= notice %></p>
-  <div class="blog-text">
-    <p>
-      <strong>Shop name:</strong>
-      <%= @receipt.shop_name %>
-    </p>
+<div style="width:100%; height:750px; overflow:auto;">
+  <div class="container">
+    <p id="notice"><%= notice %></p>
+    <div class="blog-text">
+      <p>
+        <strong>Shop name:</strong>
+        <%= @receipt.shop_name %>
+      </p>
 
-    <p>
-      <strong>Item detail:</strong>
-      <%= @receipt.item_detail %>
-    </p>
+      <p>
+        <strong>Item detail:</strong>
+        <%= @receipt.item_detail %>
+      </p>
 
-    <p>
-      <strong>Price:</strong>
-      <%= @receipt.price %>
-    </p>
+      <p>
+        <strong>Price:</strong>
+        <%= @receipt.price %>
+      </p>
 
-    <p>
-      <strong>Image:</strong>
-      <%= image_tag @receipt.image.url %>
-    </p>
+      <p>
+        <strong>Image:</strong>
+        <!-- 画面をクリックすると拡大する -->
+        <%=  link_to @receipt.image.url, 'data-lightbox': @receipt.image do %>
+        <%= image_tag @receipt.image.url if @receipt.image? %>
+        <% end %>
+      </p>
 
-    <p>
-      <strong>Memo:</strong>
-      <%= @receipt.memo %>
-    </p>
+      <p>
+        <strong>Memo:</strong>
+        <%= @receipt.memo %>
+      </p>
+    </div>
+
+      <p>コメント一覧</p>
+      <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
+      <div id="comments_area">
+      <!-- 投稿されたコメント一覧をレシピの詳細ページに表示するためのrender -->
+      <%= render partial: 'comments/index', locals: { comments: @comments, receipt: @receipt } %>
+      </div>
+      <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
+      <%= render partial: 'comments/form', locals: { comment: @comment, receipt: @receipt } %>
+
+    <%= link_to 'Edit', edit_receipt_path(@receipt) %> |
+    <%= link_to 'Back', receipts_path %>
   </div>
-
-    <p>コメント一覧</p>
-    <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
-    <div id="comments_area">
-    <!-- 投稿されたコメント一覧をレシピの詳細ページに表示するためのrender -->
-    <%= render partial: 'comments/index', locals: { comments: @comments, receipt: @receipt } %>
-  </div>
-    <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
-    <%= render partial: 'comments/form', locals: { comment: @comment, receipt: @receipt } %>
-
-<%= link_to 'Edit', edit_receipt_path(@receipt) %> |
-<%= link_to 'Back', receipts_path %>
 </div>
