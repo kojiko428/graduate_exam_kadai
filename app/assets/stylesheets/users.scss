@@ -12,3 +12,11 @@
   object-fit: cover;
   //タテヨコ比を変えないままトリミング
 }
+
+.field_user_image{
+display: inline-block
+}
+
+.main-container_user {
+  background-image: url("wallpaper_user.png")
+}

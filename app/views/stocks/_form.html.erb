@@ -1,3 +1,4 @@
+<div class="main-container_stock">
 <%= form_with(model: @stock, local: true, url: choose_new_or_edit) do |form| %>
   <% if stock.errors.any? %>
     <div id="error_explanation">
@@ -34,7 +35,7 @@
     <%= form.number_field :price %>
   </div>
 
-  <div class="field">
+  <div class="field_stock_image">
     <%= form.label :画像 %>
     <%= image_tag(@stock.image.url) if @stock.image && @stock.image.url %>
     <%= form.file_field :image %><br>
@@ -50,3 +51,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div>

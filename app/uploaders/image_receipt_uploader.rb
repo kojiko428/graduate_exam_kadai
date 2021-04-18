@@ -51,5 +51,5 @@ class ImageReceiptUploader < CarrierWave::Uploader::Base
   # end
   include CarrierWave::MiniMagick
   # 画像の縦横比を維持したまま、 width を最大 150px、height を最大 100pxにリサイズ
-  process resize_to_fit: [150, 100]
+  process resize_to_fit: [300, 200]
 end

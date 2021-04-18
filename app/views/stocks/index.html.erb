@@ -36,7 +36,9 @@
           <td><%= stock.item_name %></td>
           <td><%= stock.content %></td>
           <td><%= stock.price %></td>
-          <td><%= image_tag stock.image.url  %></td>
+
+          <td><%= image_tag stock.image.url %></td>
+
           <td><%= stock.number_of_stock %></td>
           <td><%= link_to 'Show', stock %></td>
           <td><%= link_to 'Edit', edit_stock_path(stock), data: { confirm: '本当に編集していいですか？' } %></td>
