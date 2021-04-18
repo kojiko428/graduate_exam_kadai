@@ -6,22 +6,22 @@
     <p id="notice"><%= notice %></p>
     <div class="blog-text">
       <p>
-        <strong>Shop name:</strong>
+        <strong>店舗名:</strong>
         <%= @receipt.shop_name %>
       </p>
 
       <p>
-        <strong>Item detail:</strong>
+        <strong>商品詳細:</strong>
         <%= @receipt.item_detail %>
       </p>
 
       <p>
-        <strong>Price:</strong>
-        <%= @receipt.price %>
+        <strong>価格:</strong>
+        <%= @receipt.price %>円
       </p>
 
       <p>
-        <strong>Image:</strong>
+        <strong>画像:</strong>
         <!-- 画面をクリックすると拡大する -->
         <%=  link_to @receipt.image.url, 'data-lightbox': @receipt.image do %>
         <%= image_tag @receipt.image.url if @receipt.image? %>
@@ -29,12 +29,12 @@
       </p>
 
       <p>
-        <strong>Memo:</strong>
+        <strong>メモ:</strong>
         <%= @receipt.memo %>
       </p>
     </div>
 
-      <p>コメント一覧</p>
+      <p>< コメント一覧 ></p>
       <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
       <div id="comments_area">
       <!-- 投稿されたコメント一覧をレシピの詳細ページに表示するためのrender -->
@@ -43,7 +43,7 @@
       <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
       <%= render partial: 'comments/form', locals: { comment: @comment, receipt: @receipt } %>
 
-    <%= link_to 'Edit', edit_receipt_path(@receipt) %> |
-    <%= link_to 'Back', receipts_path %>
+    <%= link_to '詳細', edit_receipt_path(@receipt) %> |
+    <%= link_to '戻る', receipts_path %>
   </div>
 </div>
