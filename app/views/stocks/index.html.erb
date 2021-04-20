@@ -5,11 +5,11 @@
 
   <%= search_form_for @q do |f| %>
     <%#= f.label :item_genre_or_item_name, "Keyword" %>
-    <%= f.search_field :item_name_cont , placeholder: '商品名 検索' %>
+    <%= f.search_field :item_name_cont , placeholder: '商品名 検索..' %>
     <%= f.submit "検索" %>
   <% end %>
   <br>
-<%= link_to "一覧に戻る", stocks_path, class:"btn btn-secondary" %>
+<%= link_to "クリア", stocks_path, class:"btn btn-secondary" %>
   <br>
 
   <div class:"table_stock" style="width:100%; height:1800px; overflow:auto;">
@@ -19,7 +19,7 @@
         <th><%= sort_link(@q, :item_genre, "ジャンル名") %></th>
         <th><%= sort_link(@q, :item_name, "商品名") %></th>
         <!-- <th>商品詳細</th> -->
-        <th><%= sort_link(@q, :price, "価格") %>円</th>
+        <th><%= sort_link(@q, :price, "価格") %></th>
         <th>画像</th>
         <th><%= sort_link(@q, :number_of_stock, "残") %></th>
         <th colspan="3"></th>

@@ -13,7 +13,7 @@
     <% end %>
 
     <div class:"table_stock" style="width:100%; height:600px; overflow:auto;">
-      <div class="field_item_gernre">
+      <div class="item_genre">
         <%= form.label :ジャンル名 %>
         <%#= form.text_field :item_genre %>
         <%= form.select :item_genre, [["洗濯用品", "0"], ["掃除用品", "1"], ["バス用品", "2"],
@@ -22,18 +22,18 @@
 
       <div class="field">
         <%= form.label :商品名 %>
-        <%= form.text_field :item_name %>
+        <%= form.text_field :item_name, id: 'item_name' %>
       </div>
 
 
       <div class="field">
         <%= form.label :内容 %>
-        <%= form.text_area :content %>
+        <%= form.text_area :content , id: 'content'%>
       </div>
 
       <div class="field">
         <%= form.label :価格 %>
-        <%= form.number_field :price %>
+        <%= form.number_field :price , id: 'price'%>
       </div>
 
       <div class="field_stock_image">
@@ -45,11 +45,11 @@
 
       <div class="field">
         <%= form.label :在庫数 %>
-        <%= form.number_field :number_of_stock %>
+        <%= form.number_field :number_of_stock , id: 'number_of_stock' %>
       </div>
 
       <div class="actions">
-        <%= form.submit class:"btn btn-warning" %>
+        <%= form.submit :Create ,class:"btn btn-warning" %>
       </div>
 
       <div class="new_stock_botton">

@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [ :edit, :update]
   before_action :set_user, only: [:show, :edit, :update]
-
-
+  #(ApplicationController)ログインユーザーが別ユーザーのマイページに行かないよう制限
+  before_action :correct_user,only:[:show]
   # マイページ
   def show
     # @user = User.find(params[:id])
@@ -30,4 +30,5 @@ class UsersController < ApplicationController
     def user_params
     params.fetch(:user, {}).permit(:username, :password, :image, :image_cache)
     end
+
 end
