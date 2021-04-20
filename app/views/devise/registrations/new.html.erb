@@ -12,7 +12,7 @@
         <div class="field form-group">
         <!-- <%#= f.label :username , class: "col-sm-2 col-sm-offset-3 control-label" %><br /> -->
           <div class=""> <!--col-sm-4 col-sm-offse -->
-            <%= f.text_field :username, autofocus: true, autocomplete: "username" , placeholder: "ユーザーネーム", class: "form-control" %>
+            <%= f.text_field :username, autofocus: true, autocomplete: "username" , placeholder: "ユーザーネーム", class: "form-control"  %>
           </div>
         </div>
 
@@ -28,7 +28,7 @@
         <!-- <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em> -->
           <% end %>
           <div class="">
-          <%= f.password_field :password, autocomplete: "new-password" , placeholder: "パスワード（6文字以上）", class: "form-control" %>
+          <%= f.password_field :password, autocomplete: "new-password" , placeholder: "パスワード（6文字以上）", class: "form-control"%>
           </div>
         </div>
 
@@ -46,7 +46,7 @@
 
         <br>
         <div class="actions">
-        <%= f.submit t('.sign_up') , class: 'btn btn-success' %>
+        <%= f.submit t('.sign_up') , class: 'btn btn-success' ,id: "sign-up-submit" %>
         </div>
         <% end %>
 

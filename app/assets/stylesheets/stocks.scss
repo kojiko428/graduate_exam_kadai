@@ -36,5 +36,34 @@ display: inline-block
 }
 
 .main-container_stock {
+  margin-top: 20px;  //「日用品の追加」からの位置
   background-image: url("wallpaper_stock.png")
+}
+
+.field{ //登録画面
+  margin-top:5px;
+  margin-bottom: 5px;
+}
+
+
+.btn-info{  // 詳細ボタン
+  margin-left: 40px ;
+  margin-right: 20px ;
+}
+
+.btn.btn-secondary{   // 編集ボタン
+  margin-right: 20px ;
+}
+
+.btn.btn-danger{   // 削除ボタン
+  margin-right: 10px ;
+}
+
+.actions{
+  margin-bottom: 10px
+}
+
+.new_stock_botton{ //new 戻るボタン
+  margin-top: 10px;
+  margin-left:20px;
 }

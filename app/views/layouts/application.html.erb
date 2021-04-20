@@ -42,13 +42,15 @@
 
       <div class="layout_display">
         <% if user_signed_in? %>
-          <%= link_to "マイページ", user_path(current_user.id) %>
-          <%= link_to "ストック投稿", stocks_path  %>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <%= link_to "マイページ画面へ", user_path(current_user.id), class:"btn btn-info" %>
+          <%#= link_to "日用品在庫の一覧へ", stocks_path , class:"btn btn-success" %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete , class:"btn btn-danger" %>
         <% else %>
-          <%= link_to "新規登録", new_user_registration_path %>
-          <%= link_to "ログイン", new_user_session_path %>
+          <%= link_to "新規登録", new_user_registration_path, class:"btn btn-warning" %>
+          <%= link_to "ログイン画面へ", new_user_session_path, class:"btn btn-info" %>
         <% end %>
+
+
 
         <% if notice %>
          <p class="alert alert-notice"><%= notice %></p>

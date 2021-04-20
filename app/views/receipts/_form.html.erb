@@ -1,46 +1,48 @@
 <div class="main-container_receipt">
-<%= form_with(model: @receipt, local: true, url: receipts_choose_new_or_edit) do |form| %>
-  <% if receipt.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= t("errors.template.header", model: Receipt.model_name.human, count: receipt.errors.count) %></h2>
+  <%= form_with(model: @receipt, local: true, url: receipts_choose_new_or_edit) do |form| %>
+    <% if receipt.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= t("errors.template.header", model: Receipt.model_name.human, count: receipt.errors.count) %></h2>
+          <ul>
+            <% receipt.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+      </div>
+    <% end %>
 
-      <ul>
-      <% receipt.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class:"table_receipt" style="width:100%; height:600px; overflow:auto;">
+      <div class="field">
+        <%= form.label :店舗名 %>
+        <%= form.text_field :shop_name , id: 'shop_name'%>
+      </div>
+
+      <div class="field">
+        <%= form.label :商品詳細 %>
+        <%= form.text_field :item_detail , id: 'item_detail' %>
+      </div>
+
+      <div class="field">
+        <%= form.label :価格 %>
+        <%= form.number_field :price , id: 'price' %>
+      </div>
+
+      <div class="field_receipt_image">
+        <%= form.label :画像 %>
+        <%= image_tag(@receipt.image.url) if @receipt.image && @receipt.image.url %>
+        <%= form.file_field :image, class:"btn btn-outline-success" %><br>
+        <%= form.hidden_field :image_cache %>
+      </div>
+
+      <div class="field">
+        <%= form.label :メモ %>
+        <%= form.text_area :memo , id: 'memo' %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit :Create, class:"btn btn-outline-warning" %>
+      </div>
+    <%= link_to '戻る', receipts_path, class:"btn btn-outline-secondary" %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :店舗名 %>
-    <%= form.text_field :shop_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :商品詳細 %>
-    <%= form.text_field :item_detail %>
-  </div>
-
-  <div class="field">
-    <%= form.label :価格 %>
-    <%= form.number_field :price %>
-  </div>
-
-  <div class="field_receipt_image">
-    <%= form.label :画像 %>
-    <%= image_tag(@receipt.image.url) if @receipt.image && @receipt.image.url %>
-    <%= form.file_field :image %><br>
-    <%= form.hidden_field :image_cache %>
-  </div>
-
-  <div class="field">
-    <%= form.label :メモ %>
-    <%= form.text_area :memo %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
 </div>
