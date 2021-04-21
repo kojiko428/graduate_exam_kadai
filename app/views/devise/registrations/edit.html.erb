@@ -1,7 +1,7 @@
 <div class = "user-edit">
   <div class = "container">
     <!-- <h2><%= t('.title', resource: resource.model_name.human) %></h2> -->
-     <h3 class = "page-title">アカウント情報編集</h3>
+     <h3 class = "page-title">マイページ情報変更</h3>
 
      <div class = "form-horizontal sign-up-form" role = "form">
        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -10,7 +10,7 @@
        </div>
 
       <div class="field form-group">
-        <%#= f.label :email %><br />
+        <!-- <%#= f.label :email %><br /> -->
         <div class="">
           <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "form-control" %>
         </div>
@@ -20,19 +20,20 @@
         <div><%= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email) %></div>
       <% end %>
 
+<!-- 以下の記述を削除 -->
       <div class="field form-group">
       <!-- <%= f.label :password %> <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it') %>)</i><br /> -->
         <div class="">
           <%= f.password_field :password, autocomplete: "new-password" , placeholder: "パスワード (6文字以上、変更しない場合は空欄)", class: "form-control" %>
         </div>
           <% if @minimum_password_length %>
-            <br />
+            <!-- <br /> -->
             <!-- <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em> -->
          <% end %>
       </div>
 
       <div class="field form-group">
-        <%#= f.label :password_confirmation %><br />
+        <!-- <%#= f.label :password_confirmation %><br /> -->
         <div class="">
         <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード（確認用）", class: "form-control" %>
         </div>
@@ -44,18 +45,24 @@
           <%= f.password_field :current_password, autocomplete: "current-password" , placeholder: "現在のパスワード", class: "form-control" %>
         </div>
       </div>
+<!-- 以上の記述を削除 -->
 
+      <div class="field_device_image">
+      <%= f.label :Image %>
+      <%= f.file_field :image , class: 'btn btn-info' %>
+      </div><br>
+      <br>
       <div class="form-group">
         <div class="actions">
-          <%= f.submit t('.update'), class: "btn btn-default" %>
+          <%= f.submit t('.update'), class:"btn btn-outline-warning" %>
         </div>
       </div>
         <% end %>
     </div>
 
-      <h3><%= t('.cancel_my_account') %></h3>
-      <p><%= t('.unhappy') %> <%= button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete %></p>
+      <h3><%#= t('.cancel_my_account') %></h3>
+      <p><%#= t('.unhappy') %> <%= button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete, class:"btn btn-outline-danger" %></p>
 
-    <%= link_to t('devise.shared.links.back'), :back %>
+    <%= link_to t('devise.shared.links.back'), :back , class:"btn btn-outline-info" %>
   </div>
 </div>

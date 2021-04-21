@@ -45,6 +45,7 @@
           <%= link_to "マイページ画面へ", user_path(current_user.id), class:"btn btn-info" %>
           <%#= link_to "日用品在庫の一覧へ", stocks_path , class:"btn btn-success" %>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete , class:"btn btn-danger" %>
+          <%= link_to 'マイページ変更', edit_user_registration_path, class:"btn btn-outline-success" %>
         <% else %>
           <%= link_to "新規登録", new_user_registration_path, class:"btn btn-warning" %>
           <%= link_to "ログイン画面へ", new_user_session_path, class:"btn btn-info" %>

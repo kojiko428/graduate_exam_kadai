@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
      devise_parameter_sanitizer.permit :sign_in, keys: added_attrs
    end
 
-   #(UserController)ログインユーザーが別ユーザーのマイページに行かないよう制限
+  #  #(UserController)ログインユーザーが別ユーザーのマイページに行かないよう制限
    def correct_user
       @user = User.find(params[:id])
       redirect_to(root_url) unless @user == current_user
