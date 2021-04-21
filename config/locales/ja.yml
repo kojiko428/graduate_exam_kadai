@@ -212,3 +212,98 @@ ja:
       previous: 前
       next: 次
       truncate: ...
+  users:
+    edit:
+      my_page_edit: マイページ編集
+      my_page_image: マイページ画像
+      username: ユーザー名
+      password: パスワード
+      Create: 保存
+    show:
+      s_user_page: のユーザーページ
+      mail_adress: メールアドレス
+      username: ユーザー名
+      go_to_stock_index_page: 日用品一覧に進む
+      go_to_receipt_index_page: みんなのお買い物に進む
+      go_to_my_page_edit: マイページ編集
+  stocks:
+    confirm:
+      s_stock: の日用品
+      register_with_the_following_contents: 以下の内容で、登録する。
+      item_genre: ジャンル名
+      item_name: 商品名
+      content: 商品詳細
+      price: 価格
+      image: 画像
+      number_of_stock: 在庫数
+      Comfirm＿Create: 登録する
+      back: 戻る
+    edit:
+      edit_stock: 編集画面
+    new:
+      add_stock: 日用品の追加
+    show:
+      show_stock: 詳細画面
+      item_genre: ジャンル名
+      item_name: 商品名
+      content: 商品詳細
+      price: 価格
+      japanese_en: 円
+      image: 画像
+      number_of_stock: 在庫数
+      go_to_edit_stock: 編集
+      go_to_back_stock: 戻る
+    index:
+      index_stock: 日用品一覧
+      stock_sreach_clear: クリア
+      item_genre: ジャンル名
+      item_name: 商品名
+      content: 商品詳細
+      price: 価格
+      japanese_en: 円
+      image: 画像
+      number_of_stock: 残
+      show_stock: 詳細
+      edit_stock: 編集
+      destroy_stock: 削除
+      create_stock: 新しく日用品を追加する
+  receipts:
+    confirm:
+      s_receipt: のお買い物
+      register_with_the_following_contents: 以下の内容で、登録する。
+      shop_name: 店舗名
+      item_detail: 商品詳細
+      memo: メモ
+      price: 価格
+      image: 画像
+    edit:
+      edit_receipt: 編集画面
+    index:
+      receipt_around_hachimanyama_station: みんなのお買い物(京王線 八幡山駅周辺)
+      receipt_sreach_clear: クリア
+      username: ユーザー名
+      shop_name: 店舗名
+      item_detail: 商品詳細
+      memo: メモ
+      price: 価格
+      image: 画像
+      created_at: 作成日時
+      mr_ms_miss: さん
+      japanese_en: 円
+      show_receipt: 詳細
+      edit_receipt: 編集
+      destroy_receipt: 削除
+      create_receipt: 新しいお買い物を追加する
+    new:
+      add_receipt: お買い物の追加
+    show:
+      show_receipt: 詳細画面
+      shop_name: 店舗名
+      item_detail: 商品詳細
+      memo: メモ
+      price: 価格
+      japanese_en: 円
+      image: 画像
+      comment_index: コメント一覧
+      go_to_edit_receipt: 編集
+      go_to_back_receipt: 戻る

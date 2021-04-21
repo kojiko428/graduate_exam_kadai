@@ -14,7 +14,7 @@ ja:
       stock:
         item_genre: ジャンル名
         item_name: 商品名
-        content: 内容
+        content: 商品詳細
         price: 価格
         image: 画像
         number_of_stock: 在庫数

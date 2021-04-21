@@ -1,8 +1,8 @@
-<h3>以下の内容で、登録する。</h3>
+<h3><%= t(".register_with_the_following_contents") %></h3>
 
 <div class="main-container_receipt">
   <div class:"table_receipt" style="width:100%; height:600px; overflow:auto;">
-    <p><%= "#{@receipt.user.username}さんのレシピ"%></p>
+    <h2><%= "#{@receipt.user.username}"%><%= t(".s_receipt") %></h2>
       <%= form_with(model: @receipt, local: true, url: receipts_path ) do |form| %>
         <%= form.hidden_field :shop_name %>
         <%= form.hidden_field :item_detail %>
@@ -10,14 +10,14 @@
         <%= form.hidden_field :price %>
         <%= form.hidden_field :image_cache %>
 
-        <p>店舗名:<%= @receipt.shop_name %></p>
-        <p>商品詳細:<%= @receipt.item_detail %></p>
-        <p>メモ:<%= @receipt.memo %></p>
-        <p>価格:<%= @receipt.price %>円</p>
-        <p>画像:<%= image_tag(@receipt.image.url) if @receipt.image && @receipt.image.url %> </p>
+        <p><%= t(".shop_name") %>:<%= @receipt.shop_name %></p>
+        <p><%= t(".item_detail") %>:<%= @receipt.item_detail %></p>
+        <p><%= t(".memo") %>:<%= @receipt.memo %></p>
+        <p><%= t(".price") %>:<%= @receipt.price %>円</p>
+        <p><%= t(".image") %>:<%= image_tag(@receipt.image.url) if @receipt.image && @receipt.image.url %> </p>
 
        <%= form.submit  "登録する", class:"btn btn-outline-warning" %>
-       <%= form.submit "戻る", name: 'back', class="btn btn-outline-secondary" %>
+       <%= form.submit "戻る", name: 'back', class:"btn btn-outline-secondary" %>
       <% end %>
   </div>
 </div>

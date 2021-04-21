@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Kaminari.configure do |config|
-  config.default_per_page = 3 # 25から10に書き換え
+  config.default_per_page = 10 # 25から10に書き換え
   # config.max_per_page = nil
   # config.window = 4
   # config.outer_window = 0
