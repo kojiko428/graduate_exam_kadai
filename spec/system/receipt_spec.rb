@@ -30,9 +30,11 @@ RSpec.describe 'レシート管理機能', type: :system do
         # attach_file "user[image]", "#{Rails.root}/spec/fixtures/test.jpg"
         fill_in 'memo', with: 'test_memo1'
 
-        click_on  'Create'
+        click_on  '保存'
+        click_on  '登録する'
 
-        expect(page).to have_content 'test_memo1'
+        expect(page).to have_content 'test_shop_name'
+        expect(page).to have_content '100'
 
       end
     end
@@ -49,7 +51,8 @@ RSpec.describe 'レシート管理機能', type: :system do
         # attach_file "user[image]", "#{Rails.root}/spec/fixtures/test.jpg"
         fill_in 'memo', with: 'test_memo1'
 
-        click_on  'Create'
+        click_on  '保存'
+        click_on  '登録する'
 
         visit new_receipt_path
 
@@ -59,9 +62,12 @@ RSpec.describe 'レシート管理機能', type: :system do
         # attach_file "user[image]", "#{Rails.root}/spec/fixtures/test.jpg"
         fill_in 'memo', with: 'test_memo2'
 
-        click_on  'Create'
+        click_on  '保存'
+        click_on  '登録する'
 
-        expect(page).to have_content 'test_memo2'
+        expect(page).to have_content '100'
+        expect(page).to have_content 'test_shop_name2'
+
       end
     end
   end
