@@ -7,8 +7,8 @@ class User < ApplicationRecord
   # 登録パスワードのバリデーション
   # VALID_PASSWORD_REGIX = /\A[a-z0-9]+\z/i
   #
-  # validates :username,  presence: true, length: { maximum: 30 }
-  # validates :email, presence: true, length: { maximum: 255 },
+  validates :username,  presence: true, length: { maximum: 30 }
+  validates :email, presence: true, length: { maximum: 50 }
   #                   format: { with: VALID_PASSWORD_REGIX  }
   # before_validation { email.downcase! }
   # has_secure_password
