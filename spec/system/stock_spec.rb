@@ -33,7 +33,7 @@ RSpec.describe 'ストック管理機能', type: :system do
         # attach_file "user[image]", "#{Rails.root}/spec/fixtures/test.jpg"
         fill_in 'number_of_stock', with: '1'
 
-        click_on  'Create'
+        click_on  '保存'
         click_on  '登録する'
 
         expect(page).to have_content '100'
@@ -54,7 +54,7 @@ RSpec.describe 'ストック管理機能', type: :system do
         # attach_file "user[image]", "#{Rails.root}/spec/fixtures/test.jpg"
         fill_in 'number_of_stock', with: '1'
 
-        click_on  'Create'
+        click_on  '保存'
         click_on  '登録する'
 
         visit new_stock_path
@@ -66,7 +66,7 @@ RSpec.describe 'ストック管理機能', type: :system do
         # attach_file "user[image]", "#{Rails.root}/spec/fixtures/test.jpg"
         fill_in 'number_of_stock', with: '1'
 
-        click_on  'Create'
+        click_on  '保存'
         click_on  '登録する'
 
         expect(page).to have_content 'test_name'
@@ -98,7 +98,7 @@ RSpec.describe 'ストック管理機能', type: :system do
         # attach_file "user[image]", "#{Rails.root}/spec/fixtures/test.jpg"
         fill_in 'number_of_stock', with: '1'
 
-        click_on  'Create'
+        click_on  '保存'
         click_on  '登録する'
         # visit stocks_path
 
@@ -111,7 +111,7 @@ RSpec.describe 'ストック管理機能', type: :system do
         # attach_file "user[image]", "#{Rails.root}/spec/fixtures/test.jpg"
         fill_in 'number_of_stock', with: '5'
 
-        click_on  'Create'
+        click_on  '保存'
         click_on  '登録する'
 
         fill_in 'q_item_name_cont' , with: '2'

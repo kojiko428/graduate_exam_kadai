@@ -1,29 +1,32 @@
 <!-- diveceディフォルト  noticeの表示が2重に表示になるため-->
 <!-- <p id="notice"><%#= notice %></p> -->
 
+<h2>< <%= t(".show_stock") %> ></h2>
+<br>
+
 <div  style="width:100%; height:500px; overflow:auto;">
   <p>
-    <strong>Item Genre:</strong>
+    <strong><%= t(".item_genre") %>:</strong>
     <%= @stock.item_genre %>
   </p>
 
   <p>
-    <strong>Item name:</strong>
+    <strong><%= t(".item_name") %>:</strong>
     <%= @stock.item_name %>
   </p>
 
   <p>
-    <strong>Content:</strong>
+    <strong><%= t(".content") %>:</strong>
     <%= @stock.content %>
   </p>
 
   <p>
-    <strong>Price:</strong>
-    <%= @stock.price %>円
+    <strong><%= t(".price") %>:</strong>
+    <%= @stock.price %><%= t(".japanese_en") %>
   </p>
 
   <p>
-    <strong>Image:</strong>
+    <strong><%= t(".image") %>:</strong>
     <!-- 画面をクリックすると拡大する -->
     <%=  link_to @stock.image.url, 'data-lightbox': @stock.image do %>
     <%= image_tag @stock.image.url  if @stock.image? %>
@@ -31,10 +34,10 @@
   </p>
 
   <p>
-    <strong>Number of stock:</strong>
+    <strong><%= t(".number_of_stock") %>:</strong>
     <%= @stock.number_of_stock %>
   </p>
 
-  <%= link_to '編集', edit_stock_path(@stock), class:"btn btn-light" %> |
-  <%= link_to '戻る', stocks_path, class:"btn btn-light"  %>
+  <%= link_to  t(".go_to_edit_stock") , edit_stock_path(@stock), class:"btn btn-light" %> |
+  <%= link_to  t(".go_to_back_stock"), stocks_path, class:"btn btn-light"  %>
 </div>

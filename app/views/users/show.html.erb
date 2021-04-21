@@ -1,4 +1,4 @@
-<h3><%= @user.username %>のユーザーページ</h3>
+<h3><%= @user.username %><%= t(".s_user_page") %></h3>
 
 <div class="main-container_user">
   <% if @user.image? %>
@@ -8,20 +8,20 @@
   <% end %>
 
 
-  <div>メールアドレス:<%= @user.email %></div>
-  <div>ユーザー名:<%= @user.username %></div>
+  <div><%= t(".mail_adress") %>:<%= @user.email %></div>
+  <div><%= t(".username") %>:<%= @user.username %></div>
 
   <div class="user_botton_stock">
     <% if user_signed_in? && @user == current_user %>
-    <%= link_to "日用品一覧に進む", stocks_path, class:"btn btn-success"%>
+    <%= link_to t(".go_to_stock_index_page"), stocks_path, class:"btn btn-success"%>
     <br>
   </div>
     <div class="user_botton_receipt">
-    <%= link_to "みんなのお買い物に進む", receipts_path, class:"btn btn-warning" %>
+    <%= link_to t(".go_to_receipt_index_page"), receipts_path, class:"btn btn-warning" %>
     <br>
   </div>
     <div class="user_botton_mypage">
-    <%= link_to "マイページ編集", edit_user_path(current_user), class:"btn btn-secondary" %>
+    <%= link_to t(".go_to_my_page_edit"), edit_user_path(current_user), class:"btn btn-secondary" %>
     <br>
     <% end %>
   </div>
