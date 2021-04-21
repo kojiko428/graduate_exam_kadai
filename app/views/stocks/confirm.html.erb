@@ -1,7 +1,7 @@
-<h3>以下の内容で、登録する。</h3>
+<h3><%= t(".register_with_the_following_contents") %></h3>
 
 <div class="main-container_stock">
-   <p><%= "#{@stock.user.username}さんのストック"%></p>
+   <h2><%= "#{@stock.user.username}" %><%= t(".s_stock") %></h2>
 
   <%= form_with(model: @stock, local: true, url: stocks_path ) do |form| %>
     <%= form.hidden_field :item_genre %>
@@ -11,16 +11,16 @@
     <%= form.hidden_field :image_cache %>
     <%= form.hidden_field :number_of_stock %>
 
-    <p>ジャンル名:<%= @stock.item_genre %></p>
-    <p>商品名:<%= @stock.item_name %></p>
-    <p>商品詳細:<%= @stock.content %></p>
-    <p>価格:<%= @stock.price %>円</p>
-    <p>画像:<%= image_tag(@stock.image.url) if @stock.image && @stock.image.url %> </p>
+    <p><%= t(".item_genre") %>:<%= @stock.item_genre %></p>
+    <p><%= t(".item_name") %>:<%= @stock.item_name %></p>
+    <p><%= t(".content") %>:<%= @stock.content %></p>
+    <p><%= t(".price") %>:<%= @stock.price %>円</p>
+    <p><%= t(".image") %>:<%= image_tag(@stock.image.url) if @stock.image && @stock.image.url %> </p>
           <%= form.hidden_field :image_cache %>
-    <p>在庫数:<%= @stock.number_of_stock %></p>
+    <p><%= t(".number_of_stock") %>:<%= @stock.number_of_stock %></p>
 
 </div>
 
-  <%= form.submit  "登録する", class:"btn btn-success" %>
+  <%= form.submit "登録する", class:"btn btn-success" %>
   <%= form.submit "戻る", name: 'back', class:"btn btn-secondary" %>
 <% end %>

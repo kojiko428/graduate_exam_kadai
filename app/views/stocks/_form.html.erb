@@ -3,7 +3,6 @@
     <% if stock.errors.any? %>
       <div id="error_explanation">
         <h2><%= t("errors.template.header", model: Stock.model_name.human, count: stock.errors.count) %></h2>
-
         <ul>
           <% stock.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -49,7 +48,7 @@
       </div>
 
       <div class="actions">
-        <%= form.submit :Create ,class:"btn btn-warning" %>
+        <%= form.submit :保存, class:"btn btn-warning" %>
       </div>
 
       <div class="new_stock_botton">

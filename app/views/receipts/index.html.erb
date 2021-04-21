@@ -1,4 +1,4 @@
-<h3>< みんなのお買い物 (京王線 八幡山駅周辺) ></h3>
+<h3>< <%= t(".receipt_around_hachimanyama_station") %> ></h3>
 
 <%= search_form_for @q do |f| %>
   <%#= f.label :shop_name_or_item_detail_or_memo_cont , "Keyword" %>
@@ -7,19 +7,19 @@
   <%= f.submit "検索" %>
 <% end %>
 
-<%= link_to "クリア", receipts_path, class:"btn btn-outline-warning" %>
+<%= link_to t(".receipt_sreach_clear"), receipts_path, class:"btn btn-outline-warning" %>
 
-<div class:"table_receipt" style="width:100%; height:1800px; overflow:auto;">
+<div class:"table_receipt" style="width:100%; height:2500px; overflow:auto;">
   <table>
     <thead align="center">
       <tr>
-        <th>ユーザー名</th>
-        <th><%= sort_link(@q, :shop_name, "店舗名") %></th>
-        <th>商品詳細</th>
+        <th><%= t(".username") %></th>
+        <th><%= sort_link(@q, :shop_name, t(".shop_name")) %></th>
+        <th><%= t(".item_detail") %></th>
         <!-- <th>メモ</th> -->
-        <th><%= sort_link(@q, :price, "価格") %></th>
-        <th>画像</th>
-        <th><%= sort_link(@q, :created_at, "作成日時") %></th>
+        <th><%= sort_link(@q, :price, t(".price")) %></th>
+        <th><%= t(".image") %></th>
+        <th><%= sort_link(@q, :created_at, t(".created_at")) %></th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -27,20 +27,20 @@
     <tbody align="center">
       <% @receipts.each do |receipt| %>
         <tr>
-          <td><%= "#{receipt.user.username}さん"%></td>
+          <td><%= "#{receipt.user.username}"%><%= t(".mr_ms_miss") %></td>
           <td><%= receipt.shop_name %></td>
           <td><%= receipt.item_detail %></td>
           <!-- <td><%#= receipt.memo %></td>  -->
-          <td><%= receipt.price %>円</td>
+          <td><%= receipt.price %><%= t(".japanese_en") %></td>
           <td><%= image_tag receipt.image.url %></td>
           <td><%= l receipt.created_at, format: :short %></td>
-          <td><%= link_to '詳細', receipt, class:"btn btn-outline-primary" %></td>
+          <td><%= link_to t(".show_receipt"), receipt, class:"btn btn-outline-primary" %></td>
 
     <!-- ログインユーザーのみ入力できる -->
         <% if current_user.id == receipt.user.id %>
-          <td><%= link_to '編集', edit_receipt_path(receipt),
+          <td><%= link_to t(".edit_receipt"), edit_receipt_path(receipt),
           data: { confirm: '本当に編集していいですか？' }, class:"btn btn-outline-secondary"%></td>
-          <td><%= link_to '削除', receipt,
+          <td><%= link_to t(".destroy_receipt"), receipt,
           method: :delete,data: { confirm: '本当に削除していいですか？' }, class:"btn btn-outline-danger" %></td>
         <% end %>
         </tr>
@@ -49,6 +49,6 @@
   </table>
 
   <br>
-  <%= link_to '新しい買い物を追加する', new_receipt_path, class:"btn btn-outline-success" %>
+  <%= link_to t(".create_receipt"), new_receipt_path, class:"btn btn-outline-success" %>
   <%= paginate @receipts  %>
 </div>

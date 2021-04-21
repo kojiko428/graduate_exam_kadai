@@ -1,17 +1,17 @@
-<h2>マイページ編集</h2>
+<h2><%= t(".my_page_edit") %></h2>
 
 <div class="main-container_user">
 <%= form_with model: @user do |form| %>
 
-  <div class="field_user_image">マイページ画像：<%= form.file_field :image , class:"btn btn-success" %></div>
+  <div class="field_user_image"><%= t(".my_page_image") %>：<%= form.file_field :image , class:"btn btn-success" %></div>
   <br>
   <br>
-  <div>ユーザー名：<%= form.text_field :username %></div>
+  <div><%= t(".username") %>：<%= form.text_field :username %></div>
   <br>
-  <div>パスワード：<%= form.text_field :password %></div>
+  <div><%= t(".password") %>：<%= form.text_field :password %></div>
   <br>
 
-  <div><%= form.submit "保存", class:"btn btn-warning"%></div>
+  <div><%= form.submit t(".Create"), class:"btn btn-warning"%></div>
   <br>
 <% end %>
 </div>
