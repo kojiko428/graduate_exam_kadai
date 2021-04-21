@@ -36,7 +36,7 @@
       <header class="header">
         <ul>
           <li><a>IEty</a></li>
-          <li><a href="http://localhost:3000/">トップページ</a></li>
+          <li><a href="/tops">トップページ</a></li>
         </ul>
       </header>
 
@@ -49,8 +49,6 @@
           <%= link_to "新規登録", new_user_registration_path, class:"btn btn-warning" %>
           <%= link_to "ログイン画面へ", new_user_session_path, class:"btn btn-info" %>
         <% end %>
-
-
 
         <% if notice %>
          <p class="alert alert-notice"><%= notice %></p>

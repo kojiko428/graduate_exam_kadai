@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, :only => [:show, :edit, :update]
   root 'tops#index'
+  resources :tops, :only => [:index]
+
   resources :stocks do
     collection do
     # 確認画面
