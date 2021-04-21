@@ -3,7 +3,6 @@
     <% if stock.errors.any? %>
       <div id="error_explanation">
         <h2><%= t("errors.template.header", model: Stock.model_name.human, count: stock.errors.count) %></h2>
-
         <ul>
           <% stock.errors.full_messages.each do |message| %>
           <li><%= message %></li>
