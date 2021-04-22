@@ -60,6 +60,19 @@ h4 {
   background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
 }
 
+.middle-message{
+  margin: 2.0em;
+  color: #364e96;/*文字色*/
+  border: solid 3px #00bfff;/*線色*/
+  padding: 0.5em;/*文字周りの余白*/
+  border-radius: 0.5em;/*角丸*/
+}
+
+h6 {
+  margin: 1.5em;
+  border-bottom: double 5px #FFC778;
+}
+
 .layout_display{
   margin-right: 15px;
   margin-top: 40px;
