@@ -24,7 +24,7 @@
       </p>
 
       <p>
-        <strong><%= t(".show_receipt") %>:</strong>
+        <strong><%= t(".image") %>:</strong>
         <!-- 画面をクリックすると拡大する -->
         <%=  link_to @receipt.image.url, 'data-lightbox': @receipt.image do %>
         <%= image_tag @receipt.image.url if @receipt.image? %>

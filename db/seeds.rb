@@ -32,3 +32,15 @@ end
   )
   stock.save!
 end
+
+15.times do |i|
+  Receipt.create!(
+    shop_name: "shop_name_#{i + 1}",
+    item_detail: "item_detail_#{i + 1}",
+    price: '120',
+    image: File.open('./app/assets/images/default_stock_receipt.png')
+    memo:      "receipt_memo_#{i + 1}"
+    user_id: rand(1..10)
+  )
+  stock.save!
+end
