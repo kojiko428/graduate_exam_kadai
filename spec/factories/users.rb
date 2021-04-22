@@ -16,4 +16,15 @@ FactoryBot.define do
     password_confirmation {"password2"}
     image     { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/test.jpg')) }
   end
+
+  factory :third_user, class: User do
+    username { "user3" }
+    email { "user3@example.com" }
+    password { "password3" }
+    password_confirmation {"password3"}
+    image     { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/test.jpg')) }
+    user_id { "1" }
+  end
+
+
 end
