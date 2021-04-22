@@ -15,18 +15,20 @@
     email:  "email_#{no}@example.com",
     password:               "#{no}password#{no}",
     password_confirmation: "#{no}password#{no}",
+    image: File.open('./app/assets/images/default.png')
   )
   user.save!
 end
 
-
-10.times do |i|
- Stock.create!(
-  title:   "task_#{i + 1}",
-  content:  "task_content_#{i + 1}",
-  deadline:  DateTime.now + 10,
-  status: = ["0","1","2"]
-  priority: rand(3),
-  user_id: = rand(1..10)
-)
+15.times do |i|
+  Stock.create!(
+    item_genre: rand(6),
+    item_name:   "item_name_#{i + 1}",
+    content:  "item_content_#{i + 1}",
+    price: '120',
+    image: File.open('./app/assets/images/default_stock_receipt.png')
+    number_of_stock: '1',
+    user_id: rand(1..10)
+  )
+  stock.save!
 end
