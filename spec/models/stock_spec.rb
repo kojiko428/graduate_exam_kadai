@@ -2,7 +2,7 @@ require 'rails_helper'
 RSpec.describe 'ストックモデル機能', type: :model do
 
   describe 'バリデーションのテスト' do
-    context 'ストックのタイトルが空の場合' do
+    context 'ストックのアイテム名が空の場合' do
       it 'バリデーションにひっかかる' do
         user = FactoryBot.create(:user)
         stock = user.stocks.build(item_name: '', content: '失敗テスト',
@@ -20,7 +20,7 @@ RSpec.describe 'ストックモデル機能', type: :model do
       end
     end
 
-    context 'ストックのタイトルと詳細に内容が記載されている場合' do
+    context 'ストックのアイテム名と詳細に内容が記載されている場合' do
       it 'バリデーションが通る' do
         user = FactoryBot.create(:user)
         stock = user.stocks.build(item_name: '成功テスト', content: '成功テスト',
