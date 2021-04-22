@@ -8,13 +8,25 @@
 
 
 
-20.times do |index|
+10.times do |index|
   no = index + 1
   user = User.create(
     name:           "user_#{no}",
     email:  "email_#{no}@example.com",
     password:               "#{no}password#{no}",
-    password_confirmation: password,
+    password_confirmation: "#{no}password#{no}",
   )
   user.save!
+end
+
+
+10.times do |i|
+ Stock.create!(
+  title:   "task_#{i + 1}",
+  content:  "task_content_#{i + 1}",
+  deadline:  DateTime.now + 10,
+  status: = ["0","1","2"]
+  priority: rand(3),
+  user_id: = rand(1..10)
+)
 end

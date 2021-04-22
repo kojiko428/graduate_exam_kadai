@@ -25,7 +25,7 @@ before_action :authenticate_user!
     elsif @stock.save
      # 追記 投稿後メール送信
      # stockMailer.stock_mail(@stock).deliver
-     redirect_to stocks_path, notice: "ストックを作成しました！"
+     redirect_to stocks_path, notice: "新しく日用品を作成しました！"
      else
      render :new
      end
@@ -42,7 +42,7 @@ before_action :authenticate_user!
   def update
    # @stock = Stock.find(params[:id])
    if @stock.update(stock_params)
-     redirect_to stocks_path, notice: "ストックを編集しました！"
+     redirect_to stocks_path, notice: "日用品を編集しました！"
    elsif
      render :edit
    end
@@ -50,7 +50,7 @@ before_action :authenticate_user!
 
   def destroy
     @stock.destroy
-    redirect_to stocks_path, notice:"ストックを削除しました！"
+    redirect_to stocks_path, notice:"日用品を削除しました！"
   end
 
   def confirm

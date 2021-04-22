@@ -25,7 +25,7 @@ class ReceiptsController < ApplicationController
     elsif @receipt.save
        # 追記 投稿後メール送信
        # receiptMailer.receipt_mail(@receipt).deliver
-      redirect_to receipts_path, notice: "レシートを作成しました！"
+      redirect_to receipts_path, notice: "新しくお買い物を追加しました！"
     else
       render :new
     end
@@ -44,7 +44,7 @@ class ReceiptsController < ApplicationController
   def update
      # @receipt = Receipt.find(params[:id])
     if @receipt.update(receipt_params)
-      redirect_to receipts_path, notice: "レシートを編集しました！"
+      redirect_to receipts_path, notice: "お買い物を編集しました！"
     elsif
       render :edit
     end
@@ -52,7 +52,7 @@ class ReceiptsController < ApplicationController
 
   def destroy
     @receipt.destroy
-    redirect_to receipts_path, notice:"レシートを削除しました！"
+    redirect_to receipts_path, notice:"お買い物を削除しました！"
   end
 
   def confirm

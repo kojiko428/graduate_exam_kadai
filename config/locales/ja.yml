@@ -220,7 +220,7 @@ ja:
       password: パスワード
       Create: 保存
     show:
-      s_user_page: のユーザーページ
+      s_user_page: のマイページ
       mail_adress: メールアドレス
       username: ユーザー名
       go_to_stock_index_page: 日用品一覧に進む
