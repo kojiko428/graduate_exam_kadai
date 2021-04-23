@@ -5,7 +5,7 @@ before_action :authenticate_user!
 
   def index
     @q = current_user.stocks.ransack(params[:q])
-    @stocks = @q.result.includes(:user).page(params[:page]) # 検索結果(検索しなければ全件取得)
+    @stocks = @q.result.includes(:user).page(params[:page]).order(created_at: :desc) # 検索結果(検索しなければ全件取得)
     # @stocks = @q.result(distinct: true)
     # @stocks = Stock.all.order(number_of_stock: :asc)
   end
@@ -64,8 +64,8 @@ before_action :authenticate_user!
 
   private
     def stock_params  #:image_cache
-     params.require(:stock).permit(:item_genre, :item_name, :content, :price, :image, :image_cache , :number_of_stock)
-     .merge(item_genre: params[:stock][:item_genre].to_i)
+     params.require(:stock).permit(:item_genre, :item_name, :content, :price, :image, :image_cache , :number_of_stock, :user_id)
+     # .merge(item_genre: params[:stock][:item_genre].to_i)
    end
    def set_stock
     @stock = Stock.find(params[:id])

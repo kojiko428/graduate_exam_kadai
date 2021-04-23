@@ -115,7 +115,7 @@ ja:
       empty: を入力してください
       equal_to: は%{count}にしてください
       even: は偶数にしてください
-      exclusion: は予約されています
+      exclusion: は選択肢から１つ選んでください
       greater_than: は%{count}より大きい値にしてください
       greater_than_or_equal_to: は%{count}以上の値にしてください
       inclusion: は一覧にありません
@@ -279,7 +279,7 @@ ja:
     edit:
       edit_receipt: 編集画面
     index:
-      receipt_around_hachimanyama_station: みんなのお買い物(京王線 八幡山駅周辺)
+      everyboby_receipt: みんなのお買い物
       receipt_sreach_clear: クリア
       username: ユーザー名
       shop_name: 店舗名

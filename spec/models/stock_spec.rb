@@ -5,7 +5,7 @@ RSpec.describe 'ストックモデル機能', type: :model do
     context 'ストックのアイテム名が空の場合' do
       it 'バリデーションにひっかかる' do
         user = FactoryBot.create(:user)
-        stock = user.stocks.build(item_name: '', content: '失敗テスト',
+        stock = user.stocks.build(item_genre: '洗濯用品', item_name: '', content: '失敗テスト',
                           price: '100', number_of_stock: '100', user_id: 1  )
         expect(stock).not_to be_valid
       end
@@ -14,7 +14,7 @@ RSpec.describe 'ストックモデル機能', type: :model do
     context 'ストックの詳細が空の場合' do
       it 'バリデーションにひっかかる' do
         user = FactoryBot.create(:user)
-        stock = user.stocks.build(item_name: '失敗テスト', content: '',
+        stock = user.stocks.build(item_genre: '洗濯用品', item_name: '失敗テスト', content: '',
                           price: '100', number_of_stock: '100', user_id: 1  )
         expect(stock).not_to be_valid
       end
@@ -23,7 +23,7 @@ RSpec.describe 'ストックモデル機能', type: :model do
     context 'ストックのアイテム名と詳細に内容が記載されている場合' do
       it 'バリデーションが通る' do
         user = FactoryBot.create(:user)
-        stock = user.stocks.build(item_name: '成功テスト', content: '成功テスト',
+        stock = user.stocks.build(item_genre: '洗濯用品', item_name: '成功テスト', content: '成功テスト',
                           price: '100', number_of_stock: '100', user_id: 1  )
         expect(stock).to be_valid
       end

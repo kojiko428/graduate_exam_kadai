@@ -5,7 +5,7 @@ class ReceiptsController < ApplicationController
 
   def index
     @q = Receipt.ransack(params[:q])
-    @receipts = @q.result.includes(:user).page(params[:page]) # 検索結果(検索しなければ全件取得)
+    @receipts = @q.result.includes(:user).page(params[:page]).order(created_at: :desc) # 検索結果(検索しなければ全件取得)
     # @receipts = @q.result(distinct: true)
     # @receipts = Receipt.all.order(created_at: :desc)
   end
