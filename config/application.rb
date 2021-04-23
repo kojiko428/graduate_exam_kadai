@@ -27,6 +27,8 @@ module GraduateExamKadai
         controller_specs: false,
         request_specs: false
       g.fixture_replacement :factory_bot, dir: "spec/factories"
+      # タイムゾーンを日本時間に設定
+      config.time_zone = 'Asia/Tokyo'
     end
   end
 end

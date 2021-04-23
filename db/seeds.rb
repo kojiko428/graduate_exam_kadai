@@ -8,17 +8,17 @@
 
 
 
-10.times do |index|
-  no = index + 1
-  user = User.create(
-    name:           "user_#{no}",
-    email:  "email_#{no}@example.com",
-    password:               "#{no}password#{no}",
-    password_confirmation: "#{no}password#{no}",
-    image: File.open('./app/assets/images/default.png')
-  )
-  user.save!
-end
+# 10.times do |index|
+#   no = index + 1
+#   user = User.create(
+#     name:           "user_#{no}",
+#     email:  "email_#{no}@example.com",
+#     password:               "#{no}password#{no}",
+#     password_confirmation: "#{no}password#{no}",
+#     image: File.open('./app/assets/images/default.png')
+#   )
+#   user.save!
+# end
 
 15.times do |i|
   Stock.create!(
@@ -42,5 +42,5 @@ end
     memo:      "receipt_memo_#{i + 1}"
     user_id: rand(1..10)
   )
-  stock.save!
+  receipt.save!
 end
