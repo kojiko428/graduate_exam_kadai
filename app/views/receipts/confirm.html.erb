@@ -13,7 +13,7 @@
         <p><%= t(".shop_name") %>:<%= @receipt.shop_name %></p>
         <p><%= t(".item_detail") %>:<%= @receipt.item_detail %></p>
         <p><%= t(".memo") %>:<%= @receipt.memo %></p>
-        <p><%= t(".price") %>:<%= @receipt.price %>円</p>
+        <p><%= t(".price") %>(合計):<%= @receipt.price %>円</p>
         <p><%= t(".image") %>:<%= image_tag(@receipt.image.url) if @receipt.image && @receipt.image.url %> </p>
 
        <%= form.submit  "登録する", class:"btn btn-outline-warning" %>

@@ -14,7 +14,7 @@
     <p><%= t(".item_genre") %>:<%= @stock.item_genre %></p>
     <p><%= t(".item_name") %>:<%= @stock.item_name %></p>
     <p><%= t(".content") %>:<%= @stock.content %></p>
-    <p><%= t(".price") %>:<%= @stock.price %>円</p>
+    <p><%= t(".price") %>(合計):<%= @stock.price %>円</p>
     <p><%= t(".image") %>:<%= image_tag(@stock.image.url) if @stock.image && @stock.image.url %> </p>
           <%= form.hidden_field :image_cache %>
     <p><%= t(".number_of_stock") %>:<%= @stock.number_of_stock %></p>
