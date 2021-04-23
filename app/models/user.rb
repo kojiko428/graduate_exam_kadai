@@ -18,6 +18,6 @@ class User < ApplicationRecord
   has_many :stocks
   has_many :receipts
 
-  mount_uploader :image, ImageUploader
+  mount_uploader :image, ImageUserUploader
 
 end

@@ -46,7 +46,6 @@
       <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
       <%= render partial: 'comments/form', locals: { comment: @comment, receipt: @receipt } %>
 
-    <%= link_to t(".go_to_edit_receipt"), edit_receipt_path(@receipt), class:"btn btn-outline-secondary" %> |
     <%= link_to t(".go_to_back_receipt"), receipts_path, class:"btn btn-outline-secondary" %>
   </div>
 </div>
