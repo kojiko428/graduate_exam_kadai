@@ -3,7 +3,7 @@
 <div class="main-container_user">
 <%= form_with model: @user do |form| %>
 
-  <div class="field_user_image"><%= t(".my_page_image") %>：<%= form.file_field :image , class:"btn btn-success" %></div>
+  <div class="field_user_image"><%= t(".my_page_image") %>：<%= form.file_field :image %></div>
   <br>
   <br>
   <div><%= t(".username") %>：<%= form.text_field :username %></div>
