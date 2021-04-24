@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
   # receiptをパラメータの値から探し出し,receiptに紐づくcommentsとしてbuildします。
     # @receipt = Receipt.find(params[:receipt_id])
     @comment = @receipt.comments.build(comment_params)
+  
   # クライアント要求に応じてフォーマットを変更
     respond_to do |format|
       if @comment.save

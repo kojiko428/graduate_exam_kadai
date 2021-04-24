@@ -272,7 +272,7 @@ ja:
       s_receipt: のお買い物
       register_with_the_following_contents: 以下の内容で、登録する。
       shop_name: 店舗名
-      item_detail: 商品詳細
+      item_detail: 商品内容
       memo: メモ
       price: 価格
       image: 画像
@@ -283,7 +283,7 @@ ja:
       receipt_sreach_clear: クリア
       username: ユーザー名
       shop_name: 店舗名
-      item_detail: 商品詳細
+      item_detail: 商品内容
       memo: メモ
       price: 価格
       image: 画像
@@ -299,7 +299,7 @@ ja:
     show:
       show_receipt: 詳細画面
       shop_name: 店舗名
-      item_detail: 商品詳細
+      item_detail: 商品内容
       memo: メモ
       price: 価格
       japanese_en: 円
