@@ -1,5 +1,9 @@
 <h3>< <%= t(".everyboby_receipt") %> ></h3>
 
+<h5><b>みんなのお買い物では自分以外の（他ユーザー）の投稿も確認できます！！</b></h5>
+<h5><b>他のユーザーさんから気になる情報を見てみよう!!</b></h5>
+
+<br>
 <%= search_form_for @q do |f| %>
   <%#= f.label :shop_name_or_item_detail_or_memo_cont , "Keyword" %>
   <%= f.search_field :shop_name_or_item_detail_or_memo_cont , placeholder: '検索ワード..' %>

@@ -1,8 +1,12 @@
 <!-- diveceディフォルト  noticeの表示が2重に表示になるため-->
 <!-- <p id="notice"><%#= notice %></p> -->
 
-<h2>< <%= t(".index_stock") %> ></h2>
+<h3>< <%= t(".index_stock") %> ></h3>
 
+<h5><b>日用品一覧では（自分だけ）日用品の在庫の確認・追加・削除・編集できます！！</b></h5>
+<h5><b>自分の日用品を把握し、購入の価格・商品名・タイミングに役立てよう！！</b></h5>
+
+<br>
   <%= search_form_for @q do |f| %>
     <%#= f.label :item_genre_or_item_name, "Keyword" %>
     <%= f.search_field :item_name_cont , placeholder: '商品名 検索..' %>
