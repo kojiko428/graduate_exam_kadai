@@ -5,14 +5,14 @@ class CommentsController < ApplicationController
   # receiptをパラメータの値から探し出し,receiptに紐づくcommentsとしてbuildします。
     # @receipt = Receipt.find(params[:receipt_id])
     @comment = @receipt.comments.build(comment_params)
-  
+
   # クライアント要求に応じてフォーマットを変更
     respond_to do |format|
       if @comment.save
         format.js { render :index }
         # format.html { redirect_to receipt_path(@receipt) }
       else
-        format.html { redirect_to receipt_path(@receipt), notice: '投稿できませんでした...' }
+        format.html { redirect_to receipt_path(@receipt), notice: '投稿できませんでした...(1字～30字で投稿下さい)' }
       end
     end
   end
@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
             flash.now[:notice] = 'コメントが編集されました'
             format.js { render :index }
           else
-            flash.now[:notice] = 'コメントの編集に失敗しました'
+            flash.now[:notice] = 'コメントの編集に失敗しました...(1字～30字で投稿下さい)'
             format.js { render :edit_error }
           end
         end
